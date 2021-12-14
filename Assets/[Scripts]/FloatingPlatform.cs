@@ -43,13 +43,17 @@ public class FloatingPlatform : MonoBehaviour
             // go back to original size if it's been shrunk
             if(transform.localScale.x<localX)
             {
-                this.transform.localScale = new Vector3(this.transform.localScale.x + 0.01f, this.transform.localScale.y, this.transform.localScale.z);
+                this.transform.localScale = new Vector3(this.transform.localScale.x + 0.005f, this.transform.localScale.y, this.transform.localScale.z);
             }
         }
         // start shrinking when player is on platform
         else if(playerOnPlatform)
         {
-            this.transform.localScale = new Vector3(this.transform.localScale.x - 0.01f, this.transform.localScale.y, this.transform.localScale.z);
+            this.transform.localScale = new Vector3(this.transform.localScale.x - 0.005f, this.transform.localScale.y, this.transform.localScale.z);
+            if(transform.localScale.x<=0.02f)
+            {
+                this.transform.localScale = new Vector3(0, this.transform.localScale.y, this.transform.localScale.z);
+            }
         }
         
     }
