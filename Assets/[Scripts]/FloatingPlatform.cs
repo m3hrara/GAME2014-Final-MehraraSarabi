@@ -1,3 +1,13 @@
+/*
+FloatingPlatform.cs
+Author: Mehrara Sarabi 
+Student ID: 101247463
+Last modified: 2021-12-14
+Description: This program contains the behaviour of the floating platform. Including floating up and down effect, shrinking on player contact,
+resetting the size when player is gone, and playing sfx on shrink and resize.
+ */
+
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
