@@ -4,17 +4,20 @@ using UnityEngine;
 
 public class FloatingPlatform : MonoBehaviour
 {
+    public SFXManager sfx;
     private float localX;
     public float maxY;
     public float minY;
     private bool playerOnPlatform = false;
     private bool goUp = true;
+
     // Start is called before the first frame update
     void Start()
     {
         maxY = transform.position.y + 0.5f;
         minY = transform.position.y - 0.5f;
         localX = transform.localScale.x;
+        sfx = FindObjectOfType<SFXManager>();
     }
 
     // Update is called once per frame
@@ -62,6 +65,7 @@ public class FloatingPlatform : MonoBehaviour
         if(collision.gameObject.name == "Player")
         {
             playerOnPlatform = true;
+            sfx.PlayShrink();
         }
     }
     private void OnCollisionExit2D(Collision2D collision)
@@ -69,6 +73,7 @@ public class FloatingPlatform : MonoBehaviour
         if (collision.gameObject.name == "Player")
         {
             playerOnPlatform = false;
+            sfx.PlayResize();
         }
     }
 }
