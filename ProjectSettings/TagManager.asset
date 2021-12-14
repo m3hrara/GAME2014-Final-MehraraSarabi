@@ -15,6 +15,7 @@ TagManager:
   - Acorn
   - Gem
   - Moving Platform
+  - Floating
   layers:
   - Default
   - TransparentFX
